@@ -74,6 +74,7 @@ df_cal.write.format('parquet')\
 🔹 **Connected Azure Synapse Analytics to the Silver Layer** using **Managed Identity (IAM)**.
 🔹 Created **Schemas, Views, and External Tables** to **serve the data efficiently**.
 
+**Refer create_view_gold and external_table to understand how to create Views and External Tables under Scripts folder**
 ---
 
 ### **5️⃣ Reporting (Power BI)**
