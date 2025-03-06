@@ -26,7 +26,7 @@ It includes the following CSV files:
    - **Azure Data Factory (ADF)**
    - **Azure Databricks**
    - **Azure Synapse Analytics**  
-![Resources](./Images/Resources.png)
+<img src="./Images/Resources.png" width="450"/>  
 
 ---
 
@@ -35,13 +35,13 @@ It includes the following CSV files:
    - **Bronze** → Raw Data  
    - **Silver** → Processed Data  
    - **Gold** → Ready-to-serve Data
-![Containers](./Images/Containers.png)
+<img src="./Images/Containers.png" width="450"/>  
 
 🔹 **Azure Data Factory (ADF) Pipelines**:
    - Extracted dataset from GitHub to the Bronze Layer dynamically using HTTP API.  
    - Implemented **Lookup + ForEach + Copy Data** activities.  
    - Configured [JSON](./Scripts/DynamicRawDataLoad.json) with relative paths and filenames to automate ingestion.  
-![ADF](./Scripts/ADF_Activities.png)
+<img src="./Images/ADF.png" width="450"/>  
 
 ---
 
@@ -49,7 +49,7 @@ It includes the following CSV files:
 🔹 Created an Azure Databricks Workspace and configured:  
    - IAM Role as Storage Blob Data Contributor for accessing the Data Lake.  
    - Databricks Compute Cluster & [Notebook](./Scripts/aw_silver_layer.ipynb) for processing raw data using PySpark.
-![Cluster](./Images/Compute_Cluster.png)
+<img src="./Images/Compute_Cluster.png" width="450"/> 
 
 🔹 **Transformation Steps (PySpark - Databricks Notebook)**
    - Read raw data from Bronze Layer.  
