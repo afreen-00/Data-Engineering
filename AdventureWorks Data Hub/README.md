@@ -6,7 +6,7 @@ This project demonstrates an **end-to-end Data Engineering pipeline** on **Azure
 ---
 
 ## **🛠 Architecture Diagram**  
-![Project Architecture](<Insert Link to Architecture Image>)  
+![Project Architecture](./Images/Architecture.png)  
 
 ---
 
@@ -36,21 +36,23 @@ It includes the following CSV files:
    - **Gold** → Ready-to-serve Data  
 
 🔹 **Azure Data Factory (ADF) Pipelines**:
-   - Extracted dataset from **GitHub to the Bronze Layer** dynamically using **HTTP API**.  
+   - Extracted dataset from GitHub to the Bronze Layer dynamically using HTTP API.  
    - Implemented **Lookup + ForEach + Copy Data** activities.  
-   - Configured JSON with **relative paths and filenames** to automate ingestion.  
+   - Configured [JSON](./Scripts/DynamicRawDataLoad.json) with relative paths and filenames to automate ingestion.  
 
 ---
 
 ### **3️⃣ Data Transformation (Silver Layer - Azure Databricks)**
-🔹 Created an **Azure Databricks Workspace** and configured:  
-   - **IAM Role as Storage Blob Data Contributor** for accessing the Data Lake.  
-   - **Databricks Compute Cluster & Notebook** for processing raw data using **PySpark**.  
+🔹 Created an Azure Databricks Workspace and configured:  
+   - IAM Role as Storage Blob Data Contributor for accessing the Data Lake.  
+   - Databricks Compute Cluster & Notebook for processing raw data using PySpark.  
 
 🔹 **Transformation Steps (PySpark - Databricks Notebook)**
-   - Read **raw data** from Bronze Layer.  
+   - Read raw data from Bronze Layer.  
    - Applied **data cleaning, type conversion, and feature engineering**.  
-   - Saved transformed data as **Parquet files** in the Silver Layer.  
+   - Saved transformed data as **Parquet files** in the Silver Layer.
+   ##### 📌 **Refer to [Notebook](./Scripts/aw_silver_layer.ipynb).**
+
 
 📌 **Example Transformation (Calendar Table)**  
 
@@ -73,7 +75,7 @@ df_cal.write.format('parquet')\
 ### **4️⃣ Data Serving (Gold Layer - Azure Synapse)**  
 🔹 Connected Azure Synapse Analytics to the Silver Layer using Managed Identity (IAM).  
 🔹 Created Schemas, Views, and External Tables to serve the data efficiently.  
-**Refer create_view_gold and external_table to understand how to create Views and External Tables under Scripts folder**  
+   ##### 📌 **Refer to [create_view_gold.sql](./Scripts/create_view_gold.sql) and [external_table.sql](./Scripts/external_table.sql) for Views and External Tables.**  
 
 ---
 
