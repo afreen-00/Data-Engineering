@@ -21,4 +21,4 @@ This repository contains a collection of **end-to-end Data Engineering projects*
 ## 📖 How to Use
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/afreen-00/data-engineering.git
+   git clone git@github.com:afreen-00/data-engineering.git
