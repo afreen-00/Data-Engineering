@@ -41,6 +41,7 @@ It includes the following CSV files:
    - Extracted dataset from GitHub to the Bronze Layer dynamically using HTTP API.  
    - Implemented **Lookup + ForEach + Copy Data** activities.  
    - Configured [JSON](./Scripts/DynamicRawDataLoad.json) with relative paths and filenames to automate ingestion.  
+![ADF](./Scripts/ADF_Activities.png)
 
 ---
 
