@@ -70,28 +70,28 @@ df_cal.write.format('parquet')\
 ```
 ---
 
-### **4️⃣ Data Serving (Gold Layer - Azure Synapse)**
-🔹 Connected Azure Synapse Analytics to the Silver Layer using Managed Identity (IAM).
-🔹 Created Schemas, Views, and External Tables to serve the data efficiently.
-**Refer create_view_gold and external_table to understand how to create Views and External Tables under Scripts folder**
+### **4️⃣ Data Serving (Gold Layer - Azure Synapse)** 
+🔹 Connected Azure Synapse Analytics to the Silver Layer using Managed Identity (IAM). 
+🔹 Created Schemas, Views, and External Tables to serve the data efficiently. 
+**Refer create_view_gold and external_table to understand how to create Views and External Tables under Scripts folder** 
 
 ---
 
-### **5️⃣ Reporting (Power BI)**
-🔹 Connected Power BI to Azure Synapse for interactive analytics.
-🔹 Created dashboards & visualizations to analyze sales trends, customer behavior, and product performance.
+### **5️⃣ Reporting (Power BI)** 
+🔹 Connected Power BI to Azure Synapse for interactive analytics. 
+🔹 Created dashboards & visualizations to analyze sales trends, customer behavior, and product performance. 
 
 ---
 
-## **📌 Technologies Used**
-✅ **Cloud:** Azure (Data Factory, Synapse, Databricks, Storage)
-✅ **ETL & Orchestration:** Azure Data Factory, Apache Airflow
-✅ **Data Processing:** PySpark, SQL
-✅ **Data Storage:** Azure Data Lake Gen2 (Bronze, Silver, Gold layers)
-✅ **Data Warehousing:** Azure Synapse Analytics
-✅ **Visualization:** Power BI
+## **📌 Technologies Used** 
+✅ **Cloud:** Azure (Data Factory, Synapse, Databricks, Storage) 
+✅ **ETL & Orchestration:** Azure Data Factory, Apache Airflow 
+✅ **Data Processing:** PySpark, SQL 
+✅ **Data Storage:** Azure Data Lake Gen2 (Bronze, Silver, Gold layers) 
+✅ **Data Warehousing:** Azure Synapse Analytics 
+✅ **Visualization:** Power BI 
 
 ---
 
-### **🚀 Conclusion**
+### **🚀 Conclusion** 
 This project demonstrates an enterprise-level Data Engineering pipeline, leveraging Azure services for efficient data ingestion, transformation, storage, and analytics. It showcases end-to-end automation and scalability in cloud-based data pipelines.
