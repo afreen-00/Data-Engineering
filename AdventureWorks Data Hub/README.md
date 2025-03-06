@@ -26,6 +26,7 @@ It includes the following CSV files:
    - **Azure Data Factory (ADF)**
    - **Azure Databricks**
    - **Azure Synapse Analytics**  
+![Resources](./Images/Resources.png)
 
 ---
 
@@ -33,7 +34,8 @@ It includes the following CSV files:
 🔹 Configured **Azure Data Lake Gen2** and created three containers:  
    - **Bronze** → Raw Data  
    - **Silver** → Processed Data  
-   - **Gold** → Ready-to-serve Data  
+   - **Gold** → Ready-to-serve Data
+![Containers](./Images/Containers.png)
 
 🔹 **Azure Data Factory (ADF) Pipelines**:
    - Extracted dataset from GitHub to the Bronze Layer dynamically using HTTP API.  
@@ -45,14 +47,13 @@ It includes the following CSV files:
 ### **3️⃣ Data Transformation (Silver Layer - Azure Databricks)**
 🔹 Created an Azure Databricks Workspace and configured:  
    - IAM Role as Storage Blob Data Contributor for accessing the Data Lake.  
-   - Databricks Compute Cluster & Notebook for processing raw data using PySpark.  
+   - Databricks Compute Cluster & [Notebook](./Scripts/aw_silver_layer.ipynb) for processing raw data using PySpark.
+![Cluster](./Images/Compute_Cluster.png)
 
 🔹 **Transformation Steps (PySpark - Databricks Notebook)**
    - Read raw data from Bronze Layer.  
    - Applied **data cleaning, type conversion, and feature engineering**.  
    - Saved transformed data as **Parquet files** in the Silver Layer.
-   ##### 📌 **Refer to [Notebook](./Scripts/aw_silver_layer.ipynb).**
-
 
 📌 **Example Transformation (Calendar Table)**  
 
@@ -74,14 +75,7 @@ df_cal.write.format('parquet')\
 
 ### **4️⃣ Data Serving (Gold Layer - Azure Synapse)**  
 🔹 Connected Azure Synapse Analytics to the Silver Layer using Managed Identity (IAM).  
-🔹 Created Schemas, Views, and External Tables to serve the data efficiently.  
-   ##### 📌 **Refer to [create_view_gold.sql](./Scripts/create_view_gold.sql) and [external_table.sql](./Scripts/external_table.sql) for Views and External Tables.**  
-
----
-
-### **5️⃣ Reporting (Power BI)**  
-🔹 Connected Power BI to Azure Synapse for interactive analytics.  
-🔹 Created dashboards & visualizations to analyze sales trends, customer behavior, and product performance.  
+🔹 Created Schemas, [Views](./Scripts/create_view_gold.sql), and [External Tables](./Scripts/external_table.sql) to serve the data efficiently.  
 
 ---
 
@@ -91,7 +85,6 @@ df_cal.write.format('parquet')\
 ✅ **Data Processing:** PySpark, SQL  
 ✅ **Data Storage:** Azure Data Lake Gen2 (Bronze, Silver, Gold layers)  
 ✅ **Data Warehousing:** Azure Synapse Analytics  
-✅ **Visualization:** Power BI  
 
 ---
 
