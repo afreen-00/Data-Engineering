@@ -10,15 +10,18 @@ This repository contains a collection of **end-to-end Data Engineering projects*
 - **Data Warehousing**: Azure Synapse, Snowflake, Redshift  
 - **Databases**: SQL Server, PostgreSQL, MongoDB  
 - **Visualization**: Power BI, Tableau  
-- **Programming**: Python, SQL, Shell Scripting  
+- **Programming**: Python, SQL, Shell Scripting
+- **Version Control**: Git, GitHub
 
 ## 📂 Project List
-### ✅ **Current Project:**  
+### ✅ **Completed Project:**  
 1️⃣ **AdventureWorks Data Hub** - End-to-end **Azure Data Pipeline** for **ETL, data modeling, and analytics** using **Azure Data Factory, Synapse, SQL, and Power BI**.  
+
+### ✅ **Current Project:**  
 
 ### 🔜 **Upcoming Projects:**  
 
 ## 📖 How to Use
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/afreen-00/data-engineering.git
+   git clone git@github.com:afreen-00/data-engineering.git
