@@ -86,6 +86,7 @@ df_cal.write.format('parquet')\
 ✅ **Data Processing:** PySpark, SQL  
 ✅ **Data Storage:** Azure Data Lake Gen2 (Bronze, Silver, Gold layers)  
 ✅ **Data Warehousing:** Azure Synapse Analytics  
+✅ **Version Control:** Git, GitHub 
 
 ---
 
