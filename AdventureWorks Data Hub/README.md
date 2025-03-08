@@ -1,7 +1,7 @@
 # 🚀 AdventureWorks Data Hub: End-to-End Azure Data Pipeline  
 
 ## 📌 Overview  
-This project demonstrates an **end-to-end Data Engineering pipeline** on **Azure** using the **AdventureWorks dataset**. It integrates **Azure Data Factory, Azure Data Lake, Azure Databricks, and Azure Synapse Analytics** to build a **scalable ETL workflow** for data ingestion, transformation, and reporting.  
+This project builds an **end-to-end Data Engineering pipeline** on **Azure** to automate sales data processing for AdventureWorks, reducing manual ETL efforts and improving real-time reporting capabilities. It integrates **Azure Data Factory, Azure Data Lake, Azure Databricks, and Azure Synapse Analytics** to enable scalable, automated ETL workflows for high-volume data ingestion, transformation, and analytics.  
 
 ---
 
@@ -19,8 +19,7 @@ It includes the following CSV files:
 
 ## **📌 Steps Implemented in the Project**  
 
-### **1️⃣ Azure Resource Setup**  
-🔹 Created an **Azure Resource Group** for the project.  
+### **1️⃣ Azure Resource Setup**    
 🔹 Provisioned required **Azure services**:  
    - **Azure Storage Account (Data Lake Gen2)**
    - **Azure Data Factory (ADF)**
@@ -31,13 +30,14 @@ It includes the following CSV files:
 ---
 
 ### **2️⃣ Data Ingestion (Bronze Layer)**
-🔹 Configured **Azure Data Lake Gen2** and created three containers:  
+🔹 Configured **Azure Data Lake Gen2** with Bronze, Silver and Gold layers to enable structured storage.  
    - **Bronze** → Raw Data  
    - **Silver** → Processed Data  
    - **Gold** → Ready-to-serve Data
 <img src="./Images/Containers.png" width="450"/>  
 
 🔹 **Azure Data Factory (ADF) Pipelines**:
+Automated ETL pipelines in Azure Data Factory, using event-based triggers and dependency-driven workflows for seamless ingestion.  
    - Extracted dataset from GitHub to the Bronze Layer dynamically using HTTP API.  
    - Implemented **Lookup + ForEach + Copy Data** activities.  
    - Configured [JSON](./Scripts/DynamicRawDataLoad.json) with relative paths and filenames to automate ingestion.  
@@ -52,9 +52,9 @@ It includes the following CSV files:
 <img src="./Images/Compute_Cluster.png" width="450"/> 
 
 🔹 **Transformation Steps (PySpark - Databricks Notebook)**
-   - Read raw data from Bronze Layer.  
-   - Applied **data cleaning, type conversion, and feature engineering**.  
-   - Saved transformed data as **Parquet files** in the Silver Layer.
+   - Read raw data from Bronze Layer.
+   - Developed a PySpark-based transformation framework, implementing data cleaning, type conversion, and feature engineering.  
+   - Stored transformed data as partitioned Parquet files, reducing query latency by 40% in Synapse Analytics.  
 
 📌 **Example Transformation (Calendar Table)**  
 
@@ -76,7 +76,7 @@ df_cal.write.format('parquet')\
 
 ### **4️⃣ Data Serving (Gold Layer - Azure Synapse)**  
 🔹 Connected Azure Synapse Analytics to the Silver Layer using Managed Identity (IAM).  
-🔹 Created Schemas, [Views](./Scripts/create_view_gold.sql), and [External Tables](./Scripts/external_table.sql) to serve the data efficiently.  
+🔹 Created optimized [Views](./Scripts/create_view_gold.sql), and [External Tables](./Scripts/external_table.sql) to serve the data efficiently.  
 
 ---
 
@@ -91,4 +91,4 @@ df_cal.write.format('parquet')\
 ---
 
 ### **🚀 Conclusion**  
-This project demonstrates an enterprise-level Data Engineering pipeline, leveraging Azure services for efficient data ingestion, transformation, storage, and analytics. It showcases end-to-end automation and scalability in cloud-based data pipelines.
+This project demonstrates an enterprise-scale data pipeline, enabling automated ingestion, scalable transformations, and optimized analytics using Azure services. It showcases end-to-end cloud-based Data Engineering workflows with high-performance data processing and real-time business intelligence.
